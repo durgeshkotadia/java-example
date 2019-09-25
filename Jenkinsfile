@@ -18,7 +18,7 @@ node {
    stage('Docker Build & Push') {
       // Build docker image and push to dockerhub
       echo pwd()
-      docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
+      docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
         def customImage = docker.build("durgeshkotadia/java-example:${env.BUILD_ID}")
         /* Push the container to the custom Registry */
         customImage.push()
